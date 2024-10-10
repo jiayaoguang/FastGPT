@@ -2,6 +2,16 @@
 FROM node:20.14.0-alpine AS maindeps
 WORKDIR /app
 
+COPY ./projects/app/data /app/data
+
+RUN ls -l /projects/app
+
+
+RUN ls -l /projects
+
+
+
+
 ARG proxy
 
 RUN [ -z "$proxy" ] || sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
